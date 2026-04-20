@@ -52,7 +52,7 @@ By the final review, this README should clearly show:
 # 1. Team Identity
 
 ## 1.1 Studio / Group Name
-`[Enter your group name]`
+`Group 15 - Chaos Catapult`
 
 ## 1.2 Team Members
 
@@ -76,7 +76,6 @@ In 1–2 paragraphs, explain:
 
 **Response:**  
 `The Chaos Catapult is a motorized, sensor-driven kinetic system designed to transform simple user input into dynamic launch actions. The project is built around a seesaw-like catapult mechanism, where a controlled sequence of motor movements—combined with a gated release system—creates a repeatable launching process. An IR sensor detects user interaction, triggering a programmed sequence that rewinds, locks, and releases the mechanism, resulting in the projection of an object.
-
 The experience is designed to be playful and engaging through the contrast between control and unpredictability. While the system operates through precise electronic and mechanical coordination, the outcome of each launch varies based on factors like weight, placement, and timing, making every interaction slightly different. This creates a sense of anticipation and satisfaction, encouraging repeated use. The project integrates multiple technologies, including an ESP32 microcontroller, DC and stepper motors for motion control, sensor-based triggering, and LED feedback, all working together to produce a responsive and interactive physical system.`
 
 ---
@@ -113,7 +112,7 @@ Complete the sentence below:
 > We are designing this project as if we are a small creative studio making a **[toy / game / playable object / interactive experience]** for **[children / teens / adults / classmates / exhibition visitors / mixed audience]**.
 
 **Response:**  
-`[Write here]`
+`We are designing this project as if we are a small creative studio making a playful, chaos-driven interactive object for classmates and exhibition visitors who like experimenting and figuring things out.`
 
 ---
 
@@ -125,7 +124,6 @@ List what inspired the project.
 | Source Type | Title / Link | What Inspired You |
 |---|---|---|
 | `[Toy` | `Traditional Catapult / Trebuchet` | `Influenced the idea of launching objects through stored and released energy, creating a playful and physics-based interaction.` |
-| `Object / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
 | `Game / Interaction` | `Arcade Trigger-Based Games` | `Inspired the simple input → action → response loop, where a user action immediately triggers a dynamic system reaction.` |
 
 ## 3.2 Original Twist
@@ -270,12 +268,8 @@ The mobile app acts as an interface layer between the user and the system, allow
 Add an early sketch of the full idea.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img src="images/body sketch.jpeg" width="400"> <img src="images/top sketch.jpeg" width="400">
 
-Example:
-```md
-
-```
 
 ## 7.2 Labeled Build Sketch
 Add a sketch with labels showing:
@@ -286,7 +280,7 @@ Add a sketch with labels showing:
 - output elements.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img src="images/labeled sketch .jpeg" width="400">
 
 ## 7.3 Approximate Dimensions
 
@@ -336,7 +330,10 @@ If something moves, explain:
 - what could go wrong.
 
 **Response:**  
-`[]`
+`The main moving parts are the catapult arm, the pulley system, the gate, and the wheels. The catapult arm rotates around a pivot to create the launch. The pulley system lifts the weight during rewind, and the gate opens and closes to control when the object is released. The wheels allow the system to move forward and backward for positioning.
+The movement is caused by motors. A DC motor is used for the rewind and release mechanism through the pulley, while a NEMA 17 stepper motor was tested as an alternative. A separate stepper motor controls the gate movement. BO DC motors are used to drive the wheels for movement.
+The gate moves roughly 90°, and the catapult arm moves through a small arc to generate the launch. The rewind motion is slower and controlled, while the release is faster to create force. Wheel movement is continuous and depends on motor input.
+Possible issues include low torque in the DC motor during rewind, insufficient performance from the NEMA setup, pulley misalignment, stepper jamming, and instability due to weight during movement. These issues affected the consistency of the full sequence.`
 
 ## 8.4 Simulation / CAD / Animation Before Making
 If your project includes mechanical motion, document the digital planning before fabrication.
@@ -357,17 +354,18 @@ What changed after the CAD, animation, or simulation stage?
 
 ## 9.1 Electronics Used
 
-| Component | Quantity | Purpose |
-| Component              | Quantity | Purpose                                                 |
-| ESP32                  |        1 | Main controller to process input and control the system |
-| IR Sensor              |        1 | Detects the presence/position of the object             |
-| DC Motor               |        1 | Drives the rewind and release mechanism                 |
-| NEMA 17 Stepper Motor  |        1 | Used as an alternative for improved torque and control  |
-| Stepper Motor (Gate)   |        1 | Controls opening and closing of the gate                |
-| Motor Driver           |        1 | Controls motor direction and power delivery             |
-| Step-Up Converter      |        1 | Boosts voltage to provide sufficient power to motors    |
-| LEDs                   |        2 | Provide visual feedback for system states               |
-| Power Bank             |        1 | Supplies power to the system                            |
+| Component                | Quantity | Purpose                                                 |
+|-------------------------|---------:|---------------------------------------------------------|
+| ESP32                   |        1 | Main controller to process input and control the system |
+| IR Sensor               |        1 | Detects the presence/position of the object             |
+| BO DC Motors            |        2 | Drive the wheels for movement of the system             |
+| DC Motor                |        1 | Drives the rewind mechanism for lifting the weight      |
+| NEMA 17 Stepper Motor   |        1 | Tested as an alternative for the rewind mechanism       |
+| Stepper Motor (Gate)    |        1 | Controls opening and closing of the gate                |
+| Motor Drivers (L298N)   |        2 | Control motor direction and power delivery              |
+| Step-Up Converters      |        2 | Boost voltage (5V to ~8V) for motors                    |
+| LEDs (Red & Green)      |        2 | Provide visual feedback for system states               |
+| Power Bank              |        1 | Supplies power to the entire system                     |
 
 ## 9.2 Wiring Plan
 Describe the main electrical connections.
@@ -385,18 +383,19 @@ All components share a common ground through the power rails, ensuring stable co
 Insert a hand-drawn or software-made circuit diagram.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img src="images/circuit diagram.jpeg" width="600">
 
 ## 9.4 Power Plan
 
-| Question | Response |
-|---|---|
-| Power source | `[USB / battery / adapter / other]` |
-| Voltage required | `[Write here]` |
-| Current concerns | `[Write here]` |
-| Safety concerns | `[Write here]` |
+| Question         | Response                                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Power source     | Power bank (USB-based)                                                                                                                      |
+| Voltage required | 5V from power bank, stepped up to ~8V for motors using step-up converters                                                                   |
+| Current concerns | DC motor (used for rewind) and NEMA motor draw high current under load; BO DC motors for wheels also add load, causing unstable performance |
+| Safety concerns  | Risk of overheating in motors and drivers, unstable voltage from converters, and loose wiring affecting reliability                         |
 
----
+
+
 
 # 10. Software Planning
 
@@ -446,7 +445,7 @@ Suggested sequence:
 - error handling.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img src="images/flowchart.png" width="400">
 
 ## 10.4 Pseudocode
 
@@ -526,7 +525,7 @@ Using the app makes the interaction more controlled and intuitive, as all action
 Insert a sketch or screenshot of the app interface.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img src="images/App 1.jpeg" width="400"> <img src="images/App UI 2.jpeg" width="400">
 
 ## 11.5 App Screen Flow
 
@@ -782,11 +781,11 @@ Include:
 - revisions.
 
 **Response:**  
-The fabrication process started with a rough foam model to understand the proportions and basic working of the mechanism. This helped in figuring out the placement of components and overall structure before moving to final materials.
+`The fabrication process started with a rough foam model to understand the proportions and basic working of the mechanism. This helped in figuring out the placement of components and overall structure before moving to final materials.
 Based on this, measurements were taken alongside ideation and the main parts were laser cut using MDF. During assembly in the wood lab, several adjustments were made to improve alignment and fit, especially for the pivot and pulley system.
 The structure was assembled using basic fastening methods like screws and joints. Some components, such as axle caps, were 3D printed to support the wheel mechanism and ensure proper fitting.
 Electronics were integrated after the basic structure was ready. Wiring was done using power rails, with the power bank connected through a step-up converter. The power bank was modified and connected in a way that allowed continuous supply using a keep-alive setup.
-Multiple revisions were made during the build process, especially to adjust alignment, improve movement, and integrate the motors properly. Final finishing involved securing components, organizing wiring, and making the system stable for testing.
+Multiple revisions were made during the build process, especially to adjust alignment, improve movement, and integrate the motors properly. Final finishing involved securing components, organizing wiring, and making the system stable for testing.`
 
 ## 17.2 Build Photos
 Add photos throughout the project.
@@ -800,11 +799,10 @@ Suggested images:
 - final build.
 
 Example:
-```md
+<img src="images/foam model prototype.jpeg" width="400"> 
+<img src="images/assembly.jpeg" width="200">
 
-
-
-```
+<img src="images/wire set up.jpeg" width="400"> <img src="images/final build.jpeg" width="200">
 
 ## 17.3 Version History
 
@@ -859,8 +857,8 @@ What slowed you down?
 How well did you manage time, tasks, and responsibilities?
 
 **Response:**  
-`The project was handled mostly individually, which helped maintain consistency across mechanics, electronics, and coding. A lot of progress was made through hands-on experimentation and trying things out directly.
-What slowed things down was time management and late integration. Many components came together towards the end, which made debugging difficult. Better planning and earlier testing of critical parts like motors and power systems would have improved the overall outcome.`
+`The project was handled mostly individually, which helped maintain consistency across mechanics, electronics, and coding. Since all parts of the system were closely connected, working on everything together made it easier to make quick decisions and iterate without dependency on others. A lot of progress came from hands-on experimentation, testing components directly, and learning through trial and error.
+What slowed things down was time management and late integration. Many components, especially motors and electronics, were brought together towards the end, which made debugging more difficult and limited the time available for proper testing. Earlier planning and prioritising critical systems like motor performance and power setup would have improved the overall workflow. Dividing time better between building, testing, and debugging would have made the process smoother.`
 
 ## 19.2 Technical Reflection
 What did you learn about:
@@ -871,9 +869,9 @@ What did you learn about:
 - integration?
 
 **Response:**  
-`This project helped in understanding how electronics, coding, and mechanical systems work together in a real setup. Working with motors, drivers, and power systems showed how important torque and proper voltage are, especially under load.
-On the coding side, writing logic for stages, handling inputs from the app, and integrating sensors was a good learning experience. It also highlighted how small issues in hardware can affect the entire system.
-Fabrication and mechanisms were interesting to work on, especially combining lever motion with pulley systems. Overall, the biggest learning was how difficult integration is when multiple systems depend on each other.`
+`This project helped in understanding how electronics, coding, and mechanical systems work together in a real setup rather than in isolation. Working with motors, drivers, and power systems showed how important torque, voltage, and current are, especially when dealing with load. It became clear that even if components work individually, they may not perform the same when integrated.
+On the coding side, writing stage-based logic, handling app inputs, and integrating sensors was a useful learning experience. It also highlighted how hardware limitations directly affect software behavior. Fabrication and mechanisms were interesting to work on, especially combining lever motion with a pulley system to create a controlled action.
+Overall, the biggest learning was how complex integration is, and how small issues in one part of the system can affect the entire workflow.`
 
 ## 19.3 Design Reflection
 What did you learn about:
@@ -885,18 +883,19 @@ What did you learn about:
 - iteration?
 
 **Response:**  
-`The project showed that designing for play is not just about the idea but also about how clearly the interaction is understood by the user. Even a simple action like launching becomes more engaging when combined with stages and anticipation.
-It also became clear that too many steps or controls can make the interaction confusing, so simplifying the flow is important. Physical interaction, like moving the system and aiming, added a fun aspect to the design.
-Iteration played a big role, as many changes were made during the build to improve how the system worked and felt.`
+`The project showed that designing for play is not just about having an interesting idea, but about how clearly the interaction is understood by the user. Even though the concept was simple, the sequence of actions made it more engaging by adding anticipation and control.
+It also became clear that too many steps or controls can confuse the user, especially when the system is not fully automated. Simplifying the interaction and reducing unnecessary steps would improve clarity. Physical interaction, such as moving the system and aiming, added an extra layer of engagement and made the experience more hands-on.
+Iteration played a major role throughout the process, as multiple changes were made to both the structure and logic to improve how the system worked and felt.`
 
 ## 19.4 If You Had One More Week
 What would you improve next?
 
 **Response:**  
-`With more time, the main focus would be on improving the motor and power system to make the launch sequence reliable. I would also simplify the control flow so that the system runs more automatically instead of relying on multiple manual inputs.
-Better testing earlier in the process would be a priority, especially for load handling and integration. Minor improvements in alignment, sensor stability, and overall finishing would also help make the system more consistent and user-friendly.`
+`With more time, the main focus would be on improving the motor and power system to make the launch sequence more reliable and consistent. This would include selecting better drivers, optimizing voltage supply, and reducing load on the mechanism.
+I would also simplify the control flow so that the system runs more automatically instead of relying on multiple manual inputs. Earlier and more structured testing would be a priority, especially for load handling, motor performance, and full system integration.
+Additionally, improvements in alignment, sensor stability, and overall finishing would help make the system more stable and user-friendly, resulting in a smoother and more polished experience.`
 
----
+
 
 # 20. Final Submission Checklist
 
@@ -905,19 +904,19 @@ Before submission, confirm that:
 - [x] Project description is complete
 - [x] Inspiration sources are included
 - [x] Player journey is written
-- [ ] Sketches are added
+- [x] Sketches are added
 - [x] BOM is complete
 - [x] Purchase list is complete
 - [x] Budget summary is complete
-- [ ] Mechanical planning is documented if applicable
+- [x] Mechanical planning is documented if applicable
 - [x] App planning is documented if applicable
-- [ ] Code flowchart is added
+- [x] Code flowchart is added
 - [x] Task breakdown is complete
 - [x] Weekly logs are updated
 - [x] Risk register is complete
 - [x] Testing log is updated
 - [x] Playtesting notes are included
-- [ ] Build photos are included
+- [x] Build photos are included
 - [x] Final reflection is written
 
 ---
