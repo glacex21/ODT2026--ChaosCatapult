@@ -124,15 +124,15 @@ List what inspired the project.
 
 | Source Type | Title / Link | What Inspired You |
 |---|---|---|
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
+| `[Toy` | `Traditional Catapult / Trebuchet` | `Influenced the idea of launching objects through stored and released energy, creating a playful and physics-based interaction.` |
+| `Object / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
+| `Game / Interaction` | `Arcade Trigger-Based Games` | `Inspired the simple input → action → response loop, where a user action immediately triggers a dynamic system reaction.` |
 
 ## 3.2 Original Twist
 What makes your project original?
 
 **Response:**  
-`[Write here]`
+`The project reinterprets a traditional catapult by shifting it from a purely manual mechanism to a partially automated, sensor-driven system. Instead of relying on direct human force, the interaction is mediated through a sequence of electronic and mechanical actions, including motorised actuation and controlled release through a gated mechanism. This introduces a layer of system logic between input and output, transforming a simple physical action into a multi-stage interactive process. What makes the project distinct is the combination of precise control and unpredictable outcomes. While the system is designed to operate through programmed sequences and controlled motion, the final result of each launch varies due to physical factors such as weight distribution, timing, and alignment. This tension between control and variability creates a unique play experience that blends engineered precision with emergent behaviour.`
 
 ---
 
@@ -148,38 +148,39 @@ Examples:
 - move object → sensor detects → sound/light response → player reacts
 
 **Response:**  
-`[Write here]`
+`system ready → platform opens → weight drops → motor rewinds mechanism → IR sensor detects position → motor stops → gate closes to hold weight → motor releases (launch action) → system resets to initial state → repeat`
 
 ## 4.2 Intended Player / Audience
 
 | Question | Response |
 |---|---|
-| Who is this for? | `[Write here]` |
-| Age range | `[Write here]` |
-| Solo or multiplayer | `[Write here]` |
-| Expected duration of one round | `[Write here]` |
-| What should the player feel? | `[Write here]` |
-| Is explanation required before use? | `[Write here]` |
+| Who is this for? | `Students & Peers` |
+| Age range | `12+` |
+| Solo or multiplayer | `Primarily solo, but can be observed and enjoyed by multiple people` |
+| Expected duration of one round | `10-15 seconds per cycle` |
+| What should the player feel? | `Curiosity, anticipation, and satisfaction from the launch action` |
+| Is explanation required before use? | `Minimal explanation required; interaction is mostly intuitive with basic guidance` |
 
 ## 4.3 Player Journey
 Describe exactly how a player will use the project.
 
-1. **Approach:** `[How does the player first encounter it?]`
-2. **Start:** `[How do they begin?]`
-3. **First Action:** `[What do they do first?]`
-4. **Main Interaction:** `[What keeps happening during use?]`
-5. **System Response:** `[How does the project respond?]`
-6. **Win / Lose / End Condition:** `[How does one round end?]`
-7. **Reset:** `[How does the next round begin?]`
+1. **Approach:** `The player approaches the setup, noticing the catapult mechanism and multiple target cups placed at increasing distances.`
+2. **Start:** `The player connects to the system through the app and prepares the catapult for use.`
+3. **First Action:** `The player places a ball on the platform and uses the app to trigger the system.`
+4. **Main Interaction:** `The system runs its sequence—opening the platform, rewinding the mechanism, and preparing for launch—while the player observes and anticipates the outcome.`
+5. **System Response:** `The mechanism releases, launching the ball toward the target. The result varies based on placement, timing, and system dynamics.`
+6. **Win / Lose / End Condition:** `If the ball lands in the target cup, the player successfully completes that level. If the player misses, they must move the catapult forward (using the wheeled base) to attempt the next target at a different distance.`
+7. **Reset:** `The system resets to its initial state, allowing the player to reposition, place another ball, and attempt the next level.`
 
 ## 4.4 Rules of Play
 If your project is a game, list the rules clearly.
 
-- `[Rule 1]`
-- `[Rule 2]`
-- `[Rule 3]`
-- `[Rule 4]`
-
+- `The player must place a ball on the catapult platform before triggering the system.`
+- `The system can only be activated through the app once the setup is ready.`
+- `The objective is to land the ball inside the target cup.`
+- `If the player misses, they must reposition the catapult using the wheeled base and attempt the next level.`
+ - `Each successful shot allows progression to a farther or more challenging target.`
+ - `The system must complete its full cycle (launch and reset) before the next attempt begins.`
 ---
 
 # 5. Definition of Success
@@ -187,25 +188,28 @@ If your project is a game, list the rules clearly.
 ## 5.1 Definition of “Playable”
 Your project will be considered complete only if these conditions are met.
 
-- [ ] `[Condition 1]`
-- [ ] `[Condition 2]`
-- [ ] `[Condition 3]`
-- [ ] `[Condition 4]`
-- [ ] `[Condition 5]`
+- [x] `[The system responds to user input (app or sensor) and initiates the sequence]`
+- [x] `[he mechanical system is able to perform the launch action]`
+- [ ] `[The motor-driven rewind and release mechanism functions with partial or full consistency]`
+- [x] `[The gate mechanism successfully controls the holding and release of the object]`
+- [ ] `[The system is able to reset to an initial or near-initial state for repeated interaction]`
 
 ## 5.2 Minimum Viable Version
 What is the smallest version of this project that still delivers the core experience?
 
 **Response:**  
-`[Write here]`
+`The minimum viable version of the project focuses on achieving a partially automated interaction where the system responds to input and executes key stages of the sequence, even if the final actuation is inconsistent.
+
+In this version, components such as sensor detection, sequencing logic, and control of intermediate stages like gate movement function as intended, demonstrating the designed interaction flow. However, the main motor-driven launch may not perform reliably due to hardware limitations.
+
+This still allows the core idea of a staged, system-driven interaction to be understood, where user input triggers a chain of mechanical and electronic responses, even if the final output is not fully realized.`
 
 ## 5.3 Stretch Features
 What features are nice to have but not essential?
 
-- `[Stretch feature 1]`
-- `[Stretch feature 2]`
-- `[Stretch feature 3]`
-
+- `Automated scoring system to track successful shots into the target`
+- `Adjustable launch power or angle control through the app`
+- `Multiple difficulty levels with dynamic target positions or distances`
 ---
 
 # 6. System Overview
@@ -213,17 +217,17 @@ What features are nice to have but not essential?
 ## 6.1 Project Type
 Check all that apply.
 
-- [ ] Electronics-based
-- [ ] Mechanical
-- [ ] Sensor-based
-- [ ] App-connected
-- [ ] Motorized
+- [x] Electronics-based
+- [x] Mechanical
+- [x] Sensor-based
+- [x] App-connected
+- [x] Motorized
 - [ ] Sound-based
 - [ ] Light-based
 - [ ] Screen/UI-based
-- [ ] Fabricated structure
-- [ ] Game logic based
-- [ ] Installation / tabletop experience
+- [x] Fabricated structure
+- [x] Game logic based
+- [x] Installation / tabletop experience
 - [ ] Other: `[Write here]`
 
 ## 6.2 High-Level System Description
@@ -237,7 +241,9 @@ Include:
 - app interaction if any.
 
 **Response:**  
-`[Write here]`
+`The project is a multi-stage interactive system that combines electronics, mechanical movement, and programmed logic to create a controlled launching mechanism. At its core, the system is designed so that a simple user input triggers a sequence of coordinated actions rather than a single direct response.
+The interaction begins when the system receives input, either through an IR sensor detecting the presence or position of an object, or through a mobile app used to initiate the sequence. This input is processed by the ESP32 microcontroller, which acts as the central control unit. Based on the programmed logic, the ESP32 executes a step-by-step sequence that coordinates multiple components instead of activating them all at once. The system output is achieved through a combination of motors and visual feedback. A stepper motor controls the opening and closing of a gate mechanism, which determines when the object is held or released. A DC motor drives the rewind and release motion of the catapult, creating the force required for launching. LEDs are used to communicate system states, such as readiness, active motion, and completion, helping the user understand what stage the system is in. Physically, the project is built as a wheeled catapult structure with a pivot-based mechanism. The platform holds the object initially, and through the sequence of actions, the object is repositioned and eventually launched. The inclusion of wheels allows the entire system to be repositioned in space, enabling different levels or target distances as part of the gameplay.
+The mobile app acts as an interface layer between the user and the system, allowing control over when the sequence begins and potentially adjusting how the system behaves. Overall, the project integrates input, processing, and output into a coordinated system where mechanical movement and electronic control work together to produce a dynamic and repeatable interaction.`
 
 ## 6.3 Input / Output Map
 
