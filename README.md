@@ -297,14 +297,14 @@ Add a sketch with labels showing:
 Check all that apply.
 
 - [ ] Gears
-- [ ] Pulleys
+- [x] Pulleys
 - [ ] Belt drives
 - [ ] Linkages
 - [ ] Hinges
 - [ ] Shafts
 - [ ] Springs
 - [ ] Bearings
-- [ ] Wheels
+- [x] Wheels
 - [ ] Sliders
 - [ ] Levers
 - [ ] Not applicable
