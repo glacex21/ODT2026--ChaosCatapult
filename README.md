@@ -58,14 +58,14 @@ By the final review, this README should clearly show:
 
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
-| `[Student 1]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
-| `[Student 2]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+| `Abhinav Akhare` | `Ideation/ Electronics / Coding / App / Mechanics` | `Fabrication` | `Strong understanding of mechanisms, hands-on prototyping, and integrating electronics with physical systems through iterative testing.` |
+| `Riddhi Piratwad` | `-` | `-` | `-` |
 
 ## 1.3 Project Title
-`[Enter the title of your project]`
+`Chaos Catapult`
 
 ## 1.4 One-Line Pitch
-`[Describe your project in one sentence]`
+`A sensor-triggered, motorized catapult that combines controlled mechanics with unpredictable outcomes, creating a repeatable yet chaotic play experience.`
 
 ## 1.5 Expanded Project Idea
 In 1–2 paragraphs, explain:
@@ -75,7 +75,9 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`[Write here]`
+`The Chaos Catapult is a motorized, sensor-driven kinetic system designed to transform simple user input into dynamic launch actions. The project is built around a seesaw-like catapult mechanism, where a controlled sequence of motor movements—combined with a gated release system—creates a repeatable launching process. An IR sensor detects user interaction, triggering a programmed sequence that rewinds, locks, and releases the mechanism, resulting in the projection of an object.
+
+The experience is designed to be playful and engaging through the contrast between control and unpredictability. While the system operates through precise electronic and mechanical coordination, the outcome of each launch varies based on factors like weight, placement, and timing, making every interaction slightly different. This creates a sense of anticipation and satisfaction, encouraging repeated use. The project integrates multiple technologies, including an ESP32 microcontroller, DC and stepper motors for motion control, sensor-based triggering, and LED feedback, all working together to produce a responsive and interactive physical system.`
 
 ---
 
@@ -101,7 +103,9 @@ Answer the following:
 - Why would someone want to try it again?
 
 **Response:**  
-`[Write here]`
+`The project creates a playful, interactive experience centered around cause-and-effect, where a simple user action triggers a chain of mechanical and electronic responses leading to a launch. It functions as a kinetic, game-like object that invites users to engage with it physically and observe the outcome. The experience is less about winning or scoring and more about interaction, anticipation, and observing how the system responds.
+The intended feeling is a mix of curiosity, anticipation, and satisfaction. Users experience a build-up as the system prepares to launch, followed by a sudden release, which creates a sense of excitement. Since the outcome of each launch can vary based on small changes in input—such as object placement or timing—the interaction feels unpredictable and slightly chaotic.
+Users are encouraged to try it repeatedly because each interaction can produce a different result. This variability, combined with the satisfying mechanical motion and responsive feedback, makes the system engaging and replayable, turning a simple action into an enjoyable and dynamic experience.`
 
 ## 2.3 Design Persona
 Complete the sentence below:
